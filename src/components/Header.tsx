@@ -11,8 +11,17 @@ const Header = ({ onContactClick }: HeaderProps) => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const closeMenu = () => setIsMenuOpen(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleMobileContactClick = () => {
+    closeMenu();
+    if (onContactClick) {
+      onContactClick();
+    }
   };
 
   return (
@@ -81,27 +90,44 @@ const Header = ({ onContactClick }: HeaderProps) => {
         {isMenuOpen && (
           <div className="md:hidden pb-2">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#about" className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
+              <a 
+                href="#about" 
+                onClick={closeMenu}
+                className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium"
+              >
                 About
               </a>
-              <a href="#services" className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
+              <a 
+                href="#services" 
+                onClick={closeMenu}
+                className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium"
+              >
                 Services
               </a>
-              <a href="#portfolio" className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
+              <a 
+                href="#portfolio" 
+                onClick={closeMenu}
+                className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium"
+              >
                 Portfolio
               </a>
-              <a href="#testimonials" className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
+              <a 
+                href="#testimonials" 
+                onClick={closeMenu}
+                className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium"
+              >
                 Testimonials
               </a>
               <button 
-                onClick={onContactClick}
-                className="block mx-3 mt-4 bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium text-center w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
+                onClick={handleMobileContactClick}
+                className="block mx-3 mt-4 bg-primary-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium text-center w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
               >
                 Get In Touch
               </button>
               <a
                 href="tel:+1234567890"
-                className="flex items-center justify-center mx-3 mt-2 bg-tertiary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2"
+                onClick={closeMenu}
+                className="flex items-center justify-center mx-3 mt-2 bg-tertiary-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2"
               >
                 <Phone size={20} className="mr-2" />
                 Call Us
