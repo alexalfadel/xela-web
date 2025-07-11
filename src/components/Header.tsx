@@ -18,7 +18,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button 
@@ -79,7 +79,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4">
+          <div className="md:hidden pb-2">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a href="#about" className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
                 About
