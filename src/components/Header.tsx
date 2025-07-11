@@ -2,10 +2,18 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onContactClick?: () => void;
+}
+
+const Header = ({ onContactClick }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -13,11 +21,17 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img 
-              src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
-              alt="Xela Web Logo" 
-              className="h-12 w-auto"
-            />
+            <button 
+              onClick={scrollToTop}
+              className="focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 rounded"
+              aria-label="Go to top of page"
+            >
+              <img 
+                src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
+                alt="Xela Web Logo" 
+                className="h-14 w-auto hover:opacity-90 transition-opacity duration-300"
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}
@@ -35,12 +49,12 @@ const Header = () => {
               <a href="#testimonials" className="text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
                 Testimonials
               </a>
-              <a 
-                href="#contact" 
-                className="bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium"
+              <button 
+                onClick={onContactClick}
+                className="bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
               >
                 Get In Touch
-              </a>
+              </button>
             </div>
           </div>
 
@@ -72,12 +86,12 @@ const Header = () => {
               <a href="#testimonials" className="block px-3 py-2 text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
                 Testimonials
               </a>
-              <a 
-                href="#contact" 
-                className="block mx-3 mt-4 bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium text-center"
+              <button 
+                onClick={onContactClick}
+                className="block mx-3 mt-4 bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium text-center w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
               >
                 Get In Touch
-              </a>
+              </button>
             </div>
           </div>
         )}

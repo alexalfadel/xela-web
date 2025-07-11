@@ -1,7 +1,11 @@
 
 import { ArrowRight, Mail, Phone } from 'lucide-react';
 
-const CallToAction = () => {
+interface CallToActionProps {
+  onContactClick?: () => void;
+}
+
+const CallToAction = ({ onContactClick }: CallToActionProps) => {
   return (
     <section id="contact" className="bg-gradient-to-br from-primary-accent via-tertiary-accent to-secondary-accent py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,18 +19,18 @@ const CallToAction = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <a 
-              href="mailto:hello@xelaweb.com"
-              className="bg-white text-neutral-800 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 font-semibold text-lg flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            <button 
+              onClick={onContactClick}
+              className="bg-white text-neutral-800 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 font-semibold text-lg flex items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-accent"
             >
               <Mail size={20} />
               Get Started Today
               <ArrowRight size={20} />
-            </a>
+            </button>
             
             <a 
               href="tel:+1234567890"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-neutral-800 transition-all duration-300 font-semibold text-lg flex items-center gap-3"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-neutral-800 transition-all duration-300 font-semibold text-lg flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-accent"
             >
               <Phone size={20} />
               Call Us Now
