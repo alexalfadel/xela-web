@@ -1,3 +1,4 @@
+
 import { Palette, Code, Settings } from 'lucide-react';
 
 const Services = () => {
@@ -23,7 +24,7 @@ const Services = () => {
               Beautiful, user-centered designs that capture your brand essence and create memorable experiences for your visitors.
             </p>
             <a 
-              href="#portfolio" 
+              href="#contact" 
               className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300"
             >
               Learn More →
@@ -39,7 +40,7 @@ const Services = () => {
               Clean, efficient code that brings your vision to life with optimal performance, security, and scalability.
             </p>
             <a 
-              href="#portfolio" 
+              href="#contact" 
               className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300"
             >
               Learn More →
@@ -55,7 +56,7 @@ const Services = () => {
               Continuous maintenance, updates, and optimization to ensure your website stays fast, secure, and up-to-date.
             </p>
             <a 
-              href="#testimonials" 
+              href="#contact" 
               className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300"
             >
               Learn More →

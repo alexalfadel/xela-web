@@ -57,7 +57,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
               </button>
               <a
                 href="tel:+1234567890"
-                className="bg-secondary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-accent focus:ring-offset-2 flex items-center"
+                className="bg-tertiary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2 flex items-center"
                 aria-label="Call us"
               >
                 <Phone size={20} />
@@ -101,7 +101,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
               </button>
               <a
                 href="tel:+1234567890"
-                className="flex items-center justify-center mx-3 mt-2 bg-secondary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-secondary-accent focus:ring-offset-2"
+                className="flex items-center justify-center mx-3 mt-2 bg-tertiary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2"
               >
                 <Phone size={20} className="mr-2" />
                 Call Us
