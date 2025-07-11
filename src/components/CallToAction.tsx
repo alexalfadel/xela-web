@@ -1,3 +1,4 @@
+
 import { ArrowRight, Mail, Phone } from 'lucide-react';
 
 interface CallToActionProps {
@@ -6,7 +7,7 @@ interface CallToActionProps {
 
 const CallToAction = ({ onContactClick }: CallToActionProps) => {
   return (
-    <section id="contact" className="bg-gradient-to-br from-primary-accent via-tertiary-accent to-secondary-accent py-20 scroll-mt-20">
+    <section id="contact" className="bg-gradient-to-br from-primary-accent via-tertiary-accent to-secondary-accent py-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center text-white">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

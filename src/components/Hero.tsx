@@ -12,6 +12,26 @@ const Hero = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleLetsTalkClick = () => {
+    // On mobile (screen width < 768px), scroll to contact section
+    // On desktop, scroll to testimonials section
+    if (window.innerWidth < 768) {
+      scrollToContact();
+    } else {
+      scrollToTestimonials();
+    }
+  };
+
   return (
     <section className="bg-white py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +58,7 @@ const Hero = () => {
             </a>
             
             <button 
-              onClick={scrollToTestimonials}
+              onClick={handleLetsTalkClick}
               className="border-2 border-neutral-800 text-neutral-800 px-8 py-4 rounded-lg hover:bg-neutral-800 hover:text-white transition-all duration-300 font-semibold text-lg"
             >
               Let's Talk
