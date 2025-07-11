@@ -120,7 +120,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
       tabIndex={-1}
     >
       <div 
-        className="bg-surface-bg rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+        className="bg-surface-bg rounded-lg shadow-xl max-w-lg w-full max-h-[95vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -142,74 +142,78 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Label htmlFor="name" className="text-neutral-800 font-medium">Name *</Label>
-              <Input
-                id="name"
-                name="name"
-                type="text"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
-                  errors.name ? 'border-red-500' : ''
-                }`}
-                placeholder="Your full name"
-                aria-describedby={errors.name ? "name-error" : undefined}
-              />
-              {errors.name && (
-                <p id="name-error" className="text-red-500 text-sm mt-1" role="alert">
-                  {errors.name}
-                </p>
-              )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="name" className="text-neutral-800 font-medium">Name *</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
+                    errors.name ? 'border-red-500' : ''
+                  }`}
+                  placeholder="Your full name"
+                  aria-describedby={errors.name ? "name-error" : undefined}
+                />
+                {errors.name && (
+                  <p id="name-error" className="text-red-500 text-sm mt-1" role="alert">
+                    {errors.name}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <Label htmlFor="email" className="text-neutral-800 font-medium">Email *</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
+                    errors.email ? 'border-red-500' : ''
+                  }`}
+                  placeholder="your@email.com"
+                  aria-describedby={errors.email ? "email-error" : undefined}
+                />
+                {errors.email && (
+                  <p id="email-error" className="text-red-500 text-sm mt-1" role="alert">
+                    {errors.email}
+                  </p>
+                )}
+              </div>
             </div>
 
-            <div>
-              <Label htmlFor="email" className="text-neutral-800 font-medium">Email *</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
-                  errors.email ? 'border-red-500' : ''
-                }`}
-                placeholder="your@email.com"
-                aria-describedby={errors.email ? "email-error" : undefined}
-              />
-              {errors.email && (
-                <p id="email-error" className="text-red-500 text-sm mt-1" role="alert">
-                  {errors.email}
-                </p>
-              )}
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="phone" className="text-neutral-800 font-medium">Phone Number</Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
+                  placeholder="(optional)"
+                />
+              </div>
 
-            <div>
-              <Label htmlFor="phone" className="text-neutral-800 font-medium">Phone Number</Label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
-                placeholder="(optional)"
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="company" className="text-neutral-800 font-medium">Company</Label>
-              <Input
-                id="company"
-                name="company"
-                type="text"
-                value={formData.company}
-                onChange={handleChange}
-                className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
-                placeholder="Your company name"
-              />
+              <div>
+                <Label htmlFor="company" className="text-neutral-800 font-medium">Company</Label>
+                <Input
+                  id="company"
+                  name="company"
+                  type="text"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
+                  placeholder="Your company name"
+                />
+              </div>
             </div>
 
             <div>
@@ -220,7 +224,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                 required
                 value={formData.projectDetails}
                 onChange={handleChange}
-                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent min-h-[100px] ${
+                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent min-h-[80px] ${
                   errors.projectDetails ? 'border-red-500' : ''
                 }`}
                 placeholder="Tell us about your project, goals, timeline, and any specific requirements..."

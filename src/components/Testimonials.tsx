@@ -8,22 +8,19 @@ const Testimonials = () => {
       name: "Sarah Chen",
       role: "CEO, TechFlow Solutions",
       company: "TechFlow Solutions",
-      content: "Xela Web transformed our vision into a stunning reality. Their attention to detail and technical expertise exceeded our expectations. The new website has increased our conversions by 40%.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b692?w=80&h=80&fit=crop&crop=face"
+      content: "Xela Web transformed our vision into a stunning reality. Their attention to detail and technical expertise exceeded our expectations. The new website has increased our conversions by 40%."
     },
     {
       name: "Michael Rodriguez",
       role: "Founder, Artisan Coffee Co.",
       company: "Artisan Coffee Co.",
-      content: "Working with Xela Web was an absolute pleasure. They understood our brand perfectly and created an e-commerce platform that truly represents our values. Sales have tripled since launch!",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+      content: "Working with Xela Web was an absolute pleasure. They understood our brand perfectly and created an e-commerce platform that truly represents our values. Sales have tripled since launch!"
     },
     {
       name: "Dr. Emily Watson", 
       role: "Director, MindfulSpace Therapy",
       company: "MindfulSpace Therapy",
-      content: "The team at Xela Web created a website that perfectly captures the calming, professional atmosphere we wanted to convey. Our online bookings have increased significantly.",
-      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=80&h=80&fit=crop&crop=face"
+      content: "The team at Xela Web created a website that perfectly captures the calming, professional atmosphere we wanted to convey. Our online bookings have increased significantly."
     }
   ];
 
@@ -38,7 +35,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="bg-surface-bg py-20">
+    <section id="testimonials" className="bg-surface-bg py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
@@ -58,11 +55,6 @@ const Testimonials = () => {
             </blockquote>
 
             <div className="flex items-center">
-              <img 
-                src={testimonials[currentIndex].avatar}
-                alt={testimonials[currentIndex].name}
-                className="w-16 h-16 rounded-full mr-4"
-              />
               <div>
                 <div className="font-semibold text-neutral-800 text-lg">
                   {testimonials[currentIndex].name}
