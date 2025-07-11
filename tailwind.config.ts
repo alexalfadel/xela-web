@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Xela Web Brand Colors
+				'canvas-bg': '#FFFFFF',
+				'surface-bg': '#F7F7F7', 
+				'neutral-800': '#333333',
+				'primary-accent': '#89CFF0',
+				'secondary-accent': '#FF964F',
+				'tertiary-accent': '#F987C5'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
