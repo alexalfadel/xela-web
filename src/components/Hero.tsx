@@ -24,16 +24,12 @@ const Hero = () => {
 
   const handleLetsTalkClick = () => {
     // On mobile (screen width < 768px), scroll to contact section
-    // On desktop, scroll to testimonials section
-    if (window.innerWidth < 768) {
-      scrollToContact();
-    } else {
-      scrollToTestimonials();
-    }
+    // On desktop, scroll to contact section
+    scrollToContact();
   };
 
   return (
-    <section className="bg-white py-20 lg:py-32">
+    <section className="bg-white py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-800 leading-tight mb-8">

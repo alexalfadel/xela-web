@@ -120,14 +120,14 @@ const Header = ({ onContactClick }: HeaderProps) => {
               </a>
               <button 
                 onClick={handleMobileContactClick}
-                className="block mx-3 mt-4 bg-primary-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium text-center w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
+                className="mx-3 mt-4 bg-primary-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium text-center w-[calc(100%-24px)] focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
               >
                 Get In Touch
               </button>
               <a
                 href="tel:+1234567890"
                 onClick={closeMenu}
-                className="flex items-center justify-center mx-3 mt-2 bg-tertiary-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2"
+                className="flex items-center justify-center mx-3 mt-2 bg-tertiary-accent text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2 w-[calc(100%-24px)]"
               >
                 <Phone size={20} className="mr-2" />
                 Call Us
