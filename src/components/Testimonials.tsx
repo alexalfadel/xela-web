@@ -1,103 +1,105 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const Testimonials = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      title: 'CEO, Company X',
-      quote: "Xela Web transformed our online presence. Their attention to detail and commitment to excellence is unmatched.",
-      image: '/lovable-uploads/person1.jpg',
+      name: "Sarah Chen",
+      role: "CEO, TechFlow Solutions",
+      company: "TechFlow Solutions",
+      content: "Xela Web transformed our vision into a stunning reality. Their attention to detail and technical expertise exceeded our expectations. The new website has increased our conversions by 40%."
     },
     {
-      name: 'Michael Brown',
-      title: 'Marketing Director, Company Y',
-      quote: "We've seen a significant increase in engagement since Xela Web redesigned our website. Highly recommended!",
-      image: '/lovable-uploads/person2.jpg',
+      name: "Michael Rodriguez",
+      role: "Founder, Artisan Coffee Co.",
+      company: "Artisan Coffee Co.",
+      content: "Working with Xela Web was an absolute pleasure. They understood our brand perfectly and created an e-commerce platform that truly represents our values. Sales have tripled since launch!"
     },
     {
-      name: 'Emily White',
-      title: 'Founder, Company Z',
-      quote: "The team at Xela Web is creative, responsive, and truly cares about their clients' success. A fantastic partner!",
-      image: '/lovable-uploads/person3.jpg',
-    },
+      name: "Dr. Emily Watson", 
+      role: "Director, MindfulSpace Therapy",
+      company: "MindfulSpace Therapy",
+      content: "The team at Xela Web created a website that perfectly captures the calming, professional atmosphere we wanted to convey. Our online bookings have increased significantly."
+    }
   ];
 
-  const goToPrevious = () => {
-    setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
-  const goToNext = () => {
-    setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  const prevTestimonial = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   };
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      goToNext();
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, []);
 
   return (
-    <section id="testimonials" className="py-20 scroll-mt-32">
+    <section id="testimonials" className="bg-surface-bg py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real feedback from real clients. See why businesses love working with us.
+            Don't just take our word for it. Here's what our clients have to say about working with us.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="overflow-hidden rounded-2xl">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="w-full flex-shrink-0">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg flex flex-col md:flex-row items-center gap-8">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name} 
-                      className="w-32 h-32 rounded-full object-cover shadow-md" 
-                    />
-                    <div>
-                      <p className="text-xl italic text-gray-700 mb-4">
-                        "{testimonial.quote}"
-                      </p>
-                      <div className="font-semibold text-neutral-800">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-gray-500">
-                        {testimonial.title}
-                      </div>
-                    </div>
-                  </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg relative">
+            <Quote className="text-tertiary-accent mb-6" size={48} />
+            
+            <blockquote className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+              "{testimonials[currentIndex].content}"
+            </blockquote>
+
+            <div className="flex items-center">
+              <div>
+                <div className="font-semibold text-neutral-800 text-lg">
+                  {testimonials[currentIndex].name}
                 </div>
-              ))}
+                <div className="text-gray-600">
+                  {testimonials[currentIndex].role}
+                </div>
+                <div className="text-primary-accent font-medium">
+                  {testimonials[currentIndex].company}
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="flex justify-between items-center mt-8">
+              <button
+                onClick={prevTestimonial}
+                className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={20} className="text-neutral-800" />
+              </button>
+
+              <div className="flex space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 ${
+                      index === currentIndex ? 'bg-primary-accent' : 'bg-gray-300'
+                    }`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={nextTestimonial}
+                className="p-3 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={20} className="text-neutral-800" />
+              </button>
             </div>
           </div>
-
-          <button 
-            onClick={goToPrevious}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 text-neutral-800 rounded-full p-2 shadow-md focus:outline-none"
-            aria-label="Go to previous testimonial"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 text-neutral-800 rounded-full p-2 shadow-md focus:outline-none"
-            aria-label="Go to next testimonial"
-          >
-            <ChevronRight size={24} />
-          </button>
         </div>
       </div>
     </section>
