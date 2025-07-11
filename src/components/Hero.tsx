@@ -2,10 +2,10 @@
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ 
+  const scrollToTestimonials = () => {
+    const testimonialsSection = document.getElementById('testimonials');
+    if (testimonialsSection) {
+      testimonialsSection.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
@@ -38,7 +38,7 @@ const Hero = () => {
             </a>
             
             <button 
-              onClick={scrollToContact}
+              onClick={scrollToTestimonials}
               className="border-2 border-neutral-800 text-neutral-800 px-8 py-4 rounded-lg hover:bg-neutral-800 hover:text-white transition-all duration-300 font-semibold text-lg"
             >
               Let's Talk
