@@ -23,13 +23,13 @@ const Header = ({ onContactClick }: HeaderProps) => {
           <div className="flex-shrink-0">
             <button 
               onClick={scrollToTop}
-              className="focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 rounded"
+              className="focus:outline-none rounded"
               aria-label="Go to top of page"
             >
               <img 
                 src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
                 alt="Xela Web Logo" 
-                className="h-14 w-auto hover:opacity-90 transition-opacity duration-300"
+                className="h-28 w-auto hover:opacity-90 transition-opacity duration-300"
               />
             </button>
           </div>

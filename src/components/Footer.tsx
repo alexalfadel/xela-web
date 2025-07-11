@@ -20,13 +20,13 @@ const Footer = ({ onContactClick }: FooterProps) => {
           <div className="md:col-span-2">
             <button 
               onClick={scrollToTop}
-              className="focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded mb-4"
+              className="focus:outline-none rounded mb-4"
               aria-label="Go to top of page"
             >
               <img 
                 src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
                 alt="Xela Web Logo" 
-                className="h-14 w-auto filter brightness-0 invert hover:opacity-90 transition-opacity duration-300"
+                className="h-28 w-auto filter brightness-0 invert hover:opacity-90 transition-opacity duration-300"
               />
             </button>
             <p className="text-gray-300 leading-relaxed mb-4 max-w-md">
@@ -34,6 +34,24 @@ const Footer = ({ onContactClick }: FooterProps) => {
               for forward-thinking businesses. Let's build something amazing together.
             </p>
             <div className="flex space-x-4">
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} />
+              </a>
               <a 
                 href="https://github.com" 
                 target="_blank" 
@@ -44,30 +62,12 @@ const Footer = ({ onContactClick }: FooterProps) => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-secondary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:hello@xelaweb.com"
                 className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-              <button 
-                onClick={onContactClick}
-                className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
-                aria-label="Contact us"
+                aria-label="Email us"
               >
                 <Mail size={20} />
-              </button>
+              </a>
             </div>
           </div>
 

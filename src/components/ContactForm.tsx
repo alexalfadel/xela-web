@@ -11,21 +11,81 @@ interface ContactFormProps {
   onClose: () => void;
 }
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  projectDetails: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  projectDetails?: string;
+}
+
 const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     company: '',
     projectDetails: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.projectDetails.trim()) {
+      newErrors.projectDetails = 'Project details are required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form and close modal
-    setFormData({ name: '', email: '', company: '', projectDetails: '' });
-    onClose();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log('Form submitted:', formData);
+      
+      // Reset form and close modal on success
+      setFormData({ name: '', email: '', phone: '', company: '', projectDetails: '' });
+      setErrors({});
+      onClose();
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -34,6 +94,14 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
       ...prev,
       [name]: value
     }));
+
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -83,9 +151,17 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
+                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
+                  errors.name ? 'border-red-500' : ''
+                }`}
                 placeholder="Your full name"
+                aria-describedby={errors.name ? "name-error" : undefined}
               />
+              {errors.name && (
+                <p id="name-error" className="text-red-500 text-sm mt-1" role="alert">
+                  {errors.name}
+                </p>
+              )}
             </div>
 
             <div>
@@ -97,8 +173,29 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
+                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
+                  errors.email ? 'border-red-500' : ''
+                }`}
                 placeholder="your@email.com"
+                aria-describedby={errors.email ? "email-error" : undefined}
+              />
+              {errors.email && (
+                <p id="email-error" className="text-red-500 text-sm mt-1" role="alert">
+                  {errors.email}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor="phone" className="text-neutral-800 font-medium">Phone Number</Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                className="mt-1 focus:ring-primary-accent focus:border-primary-accent"
+                placeholder="(optional)"
               />
             </div>
 
@@ -123,22 +220,32 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                 required
                 value={formData.projectDetails}
                 onChange={handleChange}
-                className="mt-1 focus:ring-primary-accent focus:border-primary-accent min-h-[100px]"
+                className={`mt-1 focus:ring-primary-accent focus:border-primary-accent min-h-[100px] ${
+                  errors.projectDetails ? 'border-red-500' : ''
+                }`}
                 placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
+                aria-describedby={errors.projectDetails ? "project-error" : undefined}
               />
+              {errors.projectDetails && (
+                <p id="project-error" className="text-red-500 text-sm mt-1" role="alert">
+                  {errors.projectDetails}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
               <Button
                 type="submit"
-                className="flex-1 bg-primary-accent hover:bg-primary-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
+                disabled={isSubmitting}
+                className="flex-1 bg-primary-accent hover:bg-primary-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 disabled:opacity-50"
               >
-                Submit
+                {isSubmitting ? 'Submitting...' : 'Submit'}
               </Button>
               <Button
                 type="button"
                 variant="outline"
                 onClick={onClose}
+                disabled={isSubmitting}
                 className="flex-1 border-gray-300 text-neutral-800 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
               >
                 Cancel
