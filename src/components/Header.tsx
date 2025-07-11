@@ -56,8 +56,8 @@ const Header = ({ onContactClick }: HeaderProps) => {
                 Get In Touch
               </button>
               <a
-                href="tel:+1234567890"
-                className="bg-tertiary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2 flex items-center"
+                href="tel:+16504651676"
+                className="bg-secondary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-tertiary-accent focus:ring-offset-2 flex items-center"
                 aria-label="Call us"
               >
                 <Phone size={20} />
