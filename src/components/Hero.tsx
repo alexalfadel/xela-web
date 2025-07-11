@@ -2,6 +2,16 @@
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="bg-white py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,12 +37,12 @@ const Hero = () => {
               <ArrowRight size={20} />
             </a>
             
-            <a 
-              href="#contact"
+            <button 
+              onClick={scrollToContact}
               className="border-2 border-neutral-800 text-neutral-800 px-8 py-4 rounded-lg hover:bg-neutral-800 hover:text-white transition-all duration-300 font-semibold text-lg"
             >
               Let's Talk
-            </a>
+            </button>
           </div>
         </div>
       </div>

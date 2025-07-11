@@ -29,14 +29,14 @@ const Header = ({ onContactClick }: HeaderProps) => {
               <img 
                 src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
                 alt="Xela Web Logo" 
-                className="h-[47.6px] w-auto hover:opacity-90 transition-opacity duration-300"
+                className="h-[142.8px] w-auto hover:opacity-90 transition-opacity duration-300"
               />
             </button>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-center space-x-8">
               <a href="#about" className="text-neutral-800 hover:text-primary-accent transition-colors duration-300 font-medium">
                 About
               </a>
@@ -57,7 +57,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
               </button>
               <a
                 href="tel:+1234567890"
-                className="bg-secondary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-accent focus:ring-offset-2"
+                className="bg-secondary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-accent focus:ring-offset-2 flex items-center"
                 aria-label="Call us"
               >
                 <Phone size={20} />
