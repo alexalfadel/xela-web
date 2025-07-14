@@ -25,9 +25,10 @@ const Services = () => {
           ref={cardsRef}
           className="grid md:grid-cols-3 gap-8"
         >
-          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-1' : ''}`}>
-            <div className="w-16 h-16 bg-primary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Palette className="w-8 h-8 text-white animate-bounce-subtle" />
+          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden relative overflow-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-1' : ''}`}>
+            <div className="absolute inset-0 bg-primary-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+            <div className="relative w-16 h-16 bg-primary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Palette className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-4">Design</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -41,9 +42,10 @@ const Services = () => {
             </a>
           </div>
 
-          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-2' : ''}`}>
-            <div className="w-16 h-16 bg-secondary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Code className="w-8 h-8 text-white animate-float" />
+          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden relative overflow-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-2' : ''}`}>
+            <div className="absolute inset-0 bg-secondary-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+            <div className="relative w-16 h-16 bg-secondary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Code className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-4">Development</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -57,9 +59,10 @@ const Services = () => {
             </a>
           </div>
 
-          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-3' : ''}`}>
-            <div className="w-16 h-16 bg-tertiary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Settings className="w-8 h-8 text-white animate-bounce-subtle" />
+          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden relative overflow-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-3' : ''}`}>
+            <div className="absolute inset-0 bg-tertiary-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+            <div className="relative w-16 h-16 bg-tertiary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Settings className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-4">Ongoing Support</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">

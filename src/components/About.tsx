@@ -25,32 +25,35 @@ const About = () => {
           ref={cardsRef}
           className="grid md:grid-cols-3 gap-8 mb-16"
         >
-          <div className={`text-center scroll-hidden ${cardsVisible ? 'animate-fade-in-up animate-stagger-1' : ''} hover-lift group`}>
-            <div className="w-16 h-16 bg-primary-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Users className="w-8 h-8 text-white animate-float" />
+          <div className={`text-center scroll-hidden ${cardsVisible ? 'animate-fade-in-up animate-stagger-1' : ''} hover-lift group relative overflow-hidden bg-white rounded-lg p-8 h-80`}>
+            <div className="absolute inset-0 bg-primary-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+            <div className="relative w-16 h-16 bg-primary-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Users className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-neutral-800 mb-4">Our Story</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="relative text-2xl font-bold text-neutral-800 mb-4">Our Story</h3>
+            <p className="relative text-gray-600 leading-relaxed">
               Founded with a vision to bridge the gap between beautiful design and powerful functionality, we've been crafting digital experiences that make an impact.
             </p>
           </div>
 
-          <div className={`text-center scroll-hidden ${cardsVisible ? 'animate-fade-in-up animate-stagger-2' : ''} hover-lift group`}>
-            <div className="w-16 h-16 bg-secondary-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Target className="w-8 h-8 text-white animate-bounce-subtle" />
+          <div className={`text-center scroll-hidden ${cardsVisible ? 'animate-fade-in-up animate-stagger-2' : ''} hover-lift group relative overflow-hidden bg-white rounded-lg p-8 h-80`}>
+            <div className="absolute inset-0 bg-secondary-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+            <div className="relative w-16 h-16 bg-secondary-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Target className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-neutral-800 mb-4">Our Mission</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="relative text-2xl font-bold text-neutral-800 mb-4">Our Mission</h3>
+            <p className="relative text-gray-600 leading-relaxed">
               To empower businesses with websites that not only look exceptional but perform flawlessly, driving growth and creating lasting connections with their audience.
             </p>
           </div>
 
-          <div className={`text-center scroll-hidden ${cardsVisible ? 'animate-fade-in-up animate-stagger-3' : ''} hover-lift group`}>
-            <div className="w-16 h-16 bg-tertiary-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Heart className="w-8 h-8 text-white animate-float" />
+          <div className={`text-center scroll-hidden ${cardsVisible ? 'animate-fade-in-up animate-stagger-3' : ''} hover-lift group relative overflow-hidden bg-white rounded-lg p-8 h-80`}>
+            <div className="absolute inset-0 bg-tertiary-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"></div>
+            <div className="relative w-16 h-16 bg-tertiary-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Heart className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-neutral-800 mb-4">Our Values</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <h3 className="relative text-2xl font-bold text-neutral-800 mb-4">Our Values</h3>
+            <p className="relative text-gray-600 leading-relaxed">
               Quality, creativity, and client satisfaction are at the heart of everything we do. We believe in transparent communication and delivering beyond expectations.
             </p>
           </div>

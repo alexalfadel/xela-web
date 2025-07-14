@@ -114,13 +114,13 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-fade-in"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
       onClick={onClose}
       onKeyDown={handleKeyDown}
       tabIndex={-1}
     >
       <div 
-        className="bg-surface-bg rounded-lg shadow-xl max-w-lg w-full max-h-[95vh] overflow-y-auto animate-scale-in hover-lift"
+        className="bg-surface-bg rounded-lg shadow-xl max-w-lg w-full max-h-[95vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}

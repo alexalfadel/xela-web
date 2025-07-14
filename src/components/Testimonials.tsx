@@ -36,7 +36,7 @@ const Testimonials = () => {
       if (!isAnimating) {
         nextTestimonial();
       }
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [isAnimating]);
