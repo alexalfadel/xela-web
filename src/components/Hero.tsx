@@ -34,7 +34,7 @@ const Hero = () => {
         <div className="text-center">
           <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-800 leading-tight mb-8 opacity-0">
             We build{' '}
-            <span className="bg-gradient-to-r from-primary-accent via-tertiary-accent to-secondary-accent bg-clip-text text-transparent animate-elegant-pulse">
+            <span className="bg-gradient-to-r from-primary-accent via-tertiary-accent to-secondary-accent bg-clip-text text-transparent">
               elegant
             </span>
             , high-performance websites
