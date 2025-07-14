@@ -43,7 +43,7 @@ const CallToAction = ({ onContactClick }: CallToActionProps) => {
             
             <a 
               href="tel:+1234567890"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-neutral-800 transition-all duration-300 font-semibold text-lg flex items-center gap-3 hover-lift focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-accent group"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-neutral-800 transition-all duration-300 font-semibold text-lg flex items-center gap-3 hover-lift focus:outline-none active:outline-none group"
             >
               <Phone size={20} className="group-hover:animate-bounce-subtle" />
               Call Us Now
@@ -52,17 +52,17 @@ const CallToAction = ({ onContactClick }: CallToActionProps) => {
 
           <div 
             ref={featuresRef}
-            className={`grid md:grid-cols-3 gap-8 text-center scroll-hidden ${featuresVisible ? 'animate-fade-in-up animate-stagger-3' : ''}`}
+            className="grid md:grid-cols-3 gap-8 text-center"
           >
-            <div className="hover-lift">
+            <div>
               <h3 className="text-xl font-semibold mb-2">Quick Response</h3>
               <p className="opacity-90">We'll get back to you within 24 hours</p>
             </div>
-            <div className="hover-lift">
+            <div>
               <h3 className="text-xl font-semibold mb-2">Free Consultation</h3>
               <p className="opacity-90">No commitment, just great advice</p>
             </div>
-            <div className="hover-lift">
+            <div>
               <h3 className="text-xl font-semibold mb-2">Transparent Pricing</h3>
               <p className="opacity-90">Clear quotes with no hidden fees</p>
             </div>

@@ -171,6 +171,11 @@ All colors MUST be HSL.
     animation: float 3s ease-in-out infinite;
   }
 
+  /* Wave animation for elegant text */
+  .animate-wave {
+    animation: wave 2s ease-in-out infinite;
+  }
+
   /* Hero entrance animations */
   .hero-title {
     animation: heroTitle 1.2s ease-out forwards;
@@ -300,6 +305,15 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
   }
 }
 

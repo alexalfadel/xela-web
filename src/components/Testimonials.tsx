@@ -30,16 +30,16 @@ const Testimonials = () => {
   const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
   const { ref: cardRef, isIntersecting: cardVisible } = useIntersectionObserver();
 
-  // Auto-advance testimonials
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isAnimating) {
-        nextTestimonial();
-      }
-    }, 10000);
+  // Auto-advance testimonials - DISABLED
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!isAnimating) {
+  //       nextTestimonial();
+  //     }
+  //   }, 10000);
 
-    return () => clearInterval(interval);
-  }, [isAnimating]);
+  //   return () => clearInterval(interval);
+  // }, [isAnimating]);
 
   const nextTestimonial = () => {
     if (isAnimating) return;
