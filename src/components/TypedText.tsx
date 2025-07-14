@@ -5,15 +5,18 @@ interface TypedTextProps {
   speed?: number;
   delay?: number;
   className?: string;
+  cycle?: boolean;
+  pauseDuration?: number;
 }
 
-const TypedText = ({ text, speed = 60, delay = 1000, className = '' }: TypedTextProps) => {
+const TypedText = ({ text, speed = 60, delay = 1000, className = '', cycle = false, pauseDuration = 2000 }: TypedTextProps) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const startTyping = () => {
       setIsTyping(true);
+      setDisplayedText('');
       let currentIndex = 0;
       
       const typeInterval = setInterval(() => {
@@ -23,14 +26,21 @@ const TypedText = ({ text, speed = 60, delay = 1000, className = '' }: TypedText
         } else {
           clearInterval(typeInterval);
           setIsTyping(false);
+          
+          if (cycle) {
+            setTimeout(() => {
+              startTyping();
+            }, pauseDuration);
+          }
         }
       }, speed);
 
       return () => clearInterval(typeInterval);
-    }, delay);
+    };
 
+    const timer = setTimeout(startTyping, delay);
     return () => clearTimeout(timer);
-  }, [text, speed, delay]);
+  }, [text, speed, delay, cycle, pauseDuration]);
 
   return (
     <span className={`${className} ${isTyping ? 'typed-cursor' : ''}`}>

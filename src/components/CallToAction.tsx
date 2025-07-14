@@ -28,6 +28,8 @@ const CallToAction = ({ onContactClick }: CallToActionProps) => {
                 text="Ready to transform your digital presence? We'd love to discuss your project and explore how we can help bring your vision to life."
                 speed={65}
                 delay={800}
+                cycle={true}
+                pauseDuration={3000}
               />
             </p>
           </div>
