@@ -1,5 +1,6 @@
 
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
+import logoImg from '../../public/lovable-uploads/logo.png'
 
 interface FooterProps {
   onContactClick?: () => void;
@@ -24,7 +25,7 @@ const Footer = ({ onContactClick }: FooterProps) => {
               aria-label="Go to top of page"
             >
               <img 
-                src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
+                src={logoImg} 
                 alt="Xela Web Logo" 
                 className="h-28 w-auto filter brightness-0 invert hover:opacity-90 transition-opacity duration-300"
               />

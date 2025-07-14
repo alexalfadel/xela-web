@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import logoImg from '../../public/lovable-uploads/logo.png'
 
 interface HeaderProps {
   onContactClick?: () => void;
@@ -36,7 +37,7 @@ const Header = ({ onContactClick }: HeaderProps) => {
               aria-label="Go to top of page"
             >
               <img 
-                src="/lovable-uploads/e12e6d3b-9fd1-49e9-b5a7-8443d6a313ea.png" 
+                src={logoImg} 
                 alt="Xela Web Logo" 
                 className="h-[142.8px] w-auto hover:scale-105 transition-transform duration-300"
               />
