@@ -1,6 +1,7 @@
 
 import { ArrowRight, Mail, Phone } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import TypedText from './TypedText';
 
 interface CallToActionProps {
   onContactClick?: () => void;
@@ -23,8 +24,11 @@ const CallToAction = ({ onContactClick }: CallToActionProps) => {
               Let's Talk
             </h2>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90">
-              Ready to transform your digital presence? We'd love to discuss your project 
-              and explore how we can help bring your vision to life.
+              <TypedText 
+                text="Ready to transform your digital presence? We'd love to discuss your project and explore how we can help bring your vision to life."
+                speed={65}
+                delay={500}
+              />
             </p>
           </div>
 

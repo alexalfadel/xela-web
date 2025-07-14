@@ -35,7 +35,13 @@ const Hero = () => {
           <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-800 leading-tight mb-8 opacity-0">
             We build{' '}
             <span className="bg-gradient-to-r from-primary-accent via-tertiary-accent to-secondary-accent bg-clip-text text-transparent animate-wave">
-              elegant
+              <span className="wave-letter">e</span>
+              <span className="wave-letter">l</span>
+              <span className="wave-letter">e</span>
+              <span className="wave-letter">g</span>
+              <span className="wave-letter">a</span>
+              <span className="wave-letter">n</span>
+              <span className="wave-letter">t</span>
             </span>
             , high-performance websites
           </h1>

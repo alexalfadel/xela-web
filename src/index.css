@@ -173,7 +173,37 @@ All colors MUST be HSL.
 
   /* Wave animation for elegant text */
   .animate-wave {
-    animation: wave 2s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  .animate-wave .wave-letter {
+    display: inline-block;
+    animation: wave-letter 2s ease-in-out infinite;
+  }
+
+  .animate-wave .wave-letter:nth-child(1) { animation-delay: 0s; }
+  .animate-wave .wave-letter:nth-child(2) { animation-delay: 0.1s; }
+  .animate-wave .wave-letter:nth-child(3) { animation-delay: 0.2s; }
+  .animate-wave .wave-letter:nth-child(4) { animation-delay: 0.3s; }
+  .animate-wave .wave-letter:nth-child(5) { animation-delay: 0.4s; }
+  .animate-wave .wave-letter:nth-child(6) { animation-delay: 0.5s; }
+  .animate-wave .wave-letter:nth-child(7) { animation-delay: 0.6s; }
+
+  /* Typed text animation */
+  .typed-text {
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    animation: typing 4s steps(var(--characters), end), blink-caret 1s step-end infinite;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  .typed-text.start-typing {
+    opacity: 1;
+    white-space: normal;
+    border-right: none;
   }
 
   /* Hero entrance animations */
@@ -305,6 +335,36 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes wave-letter {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(3px) rotate(-1deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(var(--primary-accent));
   }
 }
 
