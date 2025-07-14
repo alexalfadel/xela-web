@@ -35,7 +35,7 @@ const Footer = ({ onContactClick }: FooterProps) => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/in/alexandraalfadel" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
@@ -44,7 +44,7 @@ const Footer = ({ onContactClick }: FooterProps) => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/xelaweb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
@@ -53,7 +53,7 @@ const Footer = ({ onContactClick }: FooterProps) => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/alexalfadel" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
@@ -62,7 +62,7 @@ const Footer = ({ onContactClick }: FooterProps) => {
                 <Github size={20} />
               </a>
               <a 
-                href="mailto:hello@xelaweb.com"
+                href="mailto:alexalfadel@gmail.com"
                 className="text-gray-400 hover:text-primary-accent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-neutral-800 rounded p-1"
                 aria-label="Email us"
               >

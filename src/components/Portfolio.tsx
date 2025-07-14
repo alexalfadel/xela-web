@@ -1,6 +1,7 @@
 
 import { ExternalLink } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import brewBeanImg from '../media/coffee.png'
 
 const Portfolio = () => {
   const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
@@ -20,10 +21,10 @@ const Portfolio = () => {
       description: "Patient management system with intuitive interface"
     },
     {
-      title: "Restaurant Website",
+      title: "Brew & Bean",
       category: "Food & Beverage",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&h=300&fit=crop",
-      description: "Elegant dining experience with online reservations"
+      image: brewBeanImg,
+      description: "Artisanal espresso experience with easy online menu"
     },
     {
       title: "TechStartup",
