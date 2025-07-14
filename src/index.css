@@ -171,23 +171,11 @@ All colors MUST be HSL.
     animation: float 3s ease-in-out infinite;
   }
 
-  /* Wave animation for elegant text */
-  .animate-wave {
+  /* Elegant pulse animation */
+  .animate-elegant-pulse {
     display: inline-block;
+    animation: elegant-pulse 3s ease-in-out infinite;
   }
-
-  .animate-wave .wave-letter {
-    display: inline-block;
-    animation: wave-letter 2s ease-in-out infinite;
-  }
-
-  .animate-wave .wave-letter:nth-child(1) { animation-delay: 0s; }
-  .animate-wave .wave-letter:nth-child(2) { animation-delay: 0.1s; }
-  .animate-wave .wave-letter:nth-child(3) { animation-delay: 0.2s; }
-  .animate-wave .wave-letter:nth-child(4) { animation-delay: 0.3s; }
-  .animate-wave .wave-letter:nth-child(5) { animation-delay: 0.4s; }
-  .animate-wave .wave-letter:nth-child(6) { animation-delay: 0.5s; }
-  .animate-wave .wave-letter:nth-child(7) { animation-delay: 0.6s; }
 
   /* Typed text animation */
   .typed-text {
@@ -338,15 +326,12 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes wave-letter {
+@keyframes elegant-pulse {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: scale(1);
   }
-  25% {
-    transform: translateY(-3px) rotate(1deg);
-  }
-  75% {
-    transform: translateY(3px) rotate(-1deg);
+  50% {
+    transform: scale(1.05);
   }
 }
 
