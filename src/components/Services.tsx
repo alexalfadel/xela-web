@@ -1,11 +1,18 @@
 
 import { Palette, Code, Settings } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const Services = () => {
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver();
+
   return (
     <section id="services" className="py-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-hidden ${headerVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             Our Services
           </h2>
@@ -14,10 +21,13 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-primary-accent rounded-lg flex items-center justify-center mb-6">
-              <Palette className="w-8 h-8 text-white" />
+        <div 
+          ref={cardsRef}
+          className="grid md:grid-cols-3 gap-8"
+        >
+          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-1' : ''}`}>
+            <div className="w-16 h-16 bg-primary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Palette className="w-8 h-8 text-white animate-bounce-subtle" />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-4">Design</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -25,15 +35,15 @@ const Services = () => {
             </p>
             <a 
               href="#contact" 
-              className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300"
+              className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300 group-hover:translate-x-2 inline-block"
             >
               Learn More →
             </a>
           </div>
 
-          <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-secondary-accent rounded-lg flex items-center justify-center mb-6">
-              <Code className="w-8 h-8 text-white" />
+          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-2' : ''}`}>
+            <div className="w-16 h-16 bg-secondary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Code className="w-8 h-8 text-white animate-float" />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-4">Development</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -41,15 +51,15 @@ const Services = () => {
             </p>
             <a 
               href="#contact" 
-              className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300"
+              className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300 group-hover:translate-x-2 inline-block"
             >
               Learn More →
             </a>
           </div>
 
-          <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-16 h-16 bg-tertiary-accent rounded-lg flex items-center justify-center mb-6">
-              <Settings className="w-8 h-8 text-white" />
+          <div className={`bg-white rounded-lg p-8 shadow-lg hover-lift hover-glow group scroll-hidden ${cardsVisible ? 'animate-scale-in animate-stagger-3' : ''}`}>
+            <div className="w-16 h-16 bg-tertiary-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <Settings className="w-8 h-8 text-white animate-bounce-subtle" />
             </div>
             <h3 className="text-2xl font-bold text-neutral-800 mb-4">Ongoing Support</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -57,7 +67,7 @@ const Services = () => {
             </p>
             <a 
               href="#contact" 
-              className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300"
+              className="text-primary-accent hover:text-primary-accent/80 font-semibold transition-colors duration-300 group-hover:translate-x-2 inline-block"
             >
               Learn More →
             </a>

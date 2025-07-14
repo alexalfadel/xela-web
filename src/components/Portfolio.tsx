@@ -1,7 +1,11 @@
 
 import { ExternalLink } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const Portfolio = () => {
+  const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
+  const { ref: projectsRef, isIntersecting: projectsVisible } = useIntersectionObserver();
+
   const projects = [
     {
       title: "E-commerce Platform",
@@ -44,39 +48,47 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="py-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 scroll-hidden ${headerVisible ? 'animate-fade-in-up' : ''}`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-800 mb-6">
             Our Portfolio
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our recent projects and see how we've helped businesses transform their digital presence.
+            Take a look at some of our recent projects that showcase our commitment to quality and innovation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          ref={projectsRef}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className={`bg-white rounded-lg overflow-hidden shadow-lg hover-lift hover-glow group scroll-hidden-scale ${
+                projectsVisible ? `animate-scale-in animate-stagger-${Math.min(index + 1, 4)}` : ''
+              }`}
             >
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-secondary-accent bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
-                  <ExternalLink className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={24} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                  <ExternalLink className="text-white transform scale-75 group-hover:scale-100 transition-transform duration-300" size={32} />
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-sm text-primary-accent font-semibold mb-2">
+                <div className="text-sm text-tertiary-accent font-semibold mb-2 uppercase tracking-wide">
                   {project.category}
                 </div>
-                <h3 className="text-xl font-bold text-neutral-800 mb-2">
+                <h3 className="text-xl font-bold text-neutral-800 mb-3 group-hover:text-primary-accent transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 leading-relaxed">
                   {project.description}
                 </p>
               </div>

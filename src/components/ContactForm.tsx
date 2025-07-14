@@ -114,13 +114,13 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-fade-in"
       onClick={onClose}
       onKeyDown={handleKeyDown}
       tabIndex={-1}
     >
       <div 
-        className="bg-surface-bg rounded-lg shadow-xl max-w-lg w-full max-h-[95vh] overflow-y-auto"
+        className="bg-surface-bg rounded-lg shadow-xl max-w-lg w-full max-h-[95vh] overflow-y-auto animate-scale-in hover-lift"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -152,7 +152,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className={`mt-1 focus:ring-primary-accent focus:border-primary-accent ${
+                  className={`mt-1 focus:ring-primary-accent focus:border-primary-accent transition-all duration-300 focus:scale-105 ${
                     errors.name ? 'border-red-500' : ''
                   }`}
                   placeholder="Your full name"
@@ -241,7 +241,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 bg-primary-accent hover:bg-primary-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 disabled:opacity-50"
+                className="flex-1 bg-primary-accent hover:bg-primary-accent/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover-lift hover-glow focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 disabled:opacity-50"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit'}
               </Button>
@@ -250,7 +250,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                 variant="outline"
                 onClick={onClose}
                 disabled={isSubmitting}
-                className="flex-1 border-gray-300 text-neutral-800 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+                className="flex-1 border-gray-300 text-neutral-800 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover-lift focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
               >
                 Cancel
               </Button>
