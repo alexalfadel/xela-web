@@ -66,9 +66,12 @@ const Portfolio = () => {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {projects.map((project, index) => (
-            <div 
+            <a 
               key={index}
-              className={`bg-white rounded-lg overflow-hidden shadow-lg hover-lift hover-glow group scroll-hidden-scale ${
+              href="https://brewbean.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block bg-white rounded-lg overflow-hidden shadow-lg hover-lift hover-glow group scroll-hidden-scale ${
                 projectsVisible ? `animate-scale-in animate-stagger-${Math.min(index + 1, 4)}` : ''
               }`}
             >
@@ -93,7 +96,7 @@ const Portfolio = () => {
                   {project.description}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
