@@ -60,13 +60,13 @@ const Header = ({ onContactClick }: HeaderProps) => {
               </a>
               <button 
                 onClick={onContactClick}
-                className="bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
+                className="bg-primary-accent text-white px-6 py-2 rounded-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2"
               >
                 Get In Touch
               </button>
               <a
                 href="tel:+16504651676"
-                className="bg-secondary-accent text-white p-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 focus:outline-none active:outline-none flex items-center"
+                className="bg-secondary-accent text-white p-2 rounded-lg hover:bg-opacity-90 hover:scale-105 transition-all duration-300 focus:outline-none active:outline-none flex items-center"
                 aria-label="Call us"
               >
                 <Phone size={20} />

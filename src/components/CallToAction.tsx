@@ -43,7 +43,7 @@ const CallToAction = ({ onContactClick }: CallToActionProps) => {
             
             <a 
               href="tel:+1234567890"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-neutral-800 transition-all duration-300 font-semibold text-lg flex items-center gap-3 hover-lift focus:outline-none active:outline-none group"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-neutral-800 transition-all duration-300 font-semibold text-lg flex items-center gap-3 hover-lift focus:outline-none active:outline-none group leading-none"
             >
               <Phone size={20} className="group-hover:animate-bounce-subtle" />
               Call Us Now
