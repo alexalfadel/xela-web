@@ -27,7 +27,7 @@ const CallToAction = ({ onContactClick }: CallToActionProps) => {
               <TypedText 
                 text="Ready to transform your digital presence? We'd love to discuss your project and explore how we can help bring your vision to life."
                 speed={65}
-                delay={500}
+                delay={800}
               />
             </p>
           </div>
