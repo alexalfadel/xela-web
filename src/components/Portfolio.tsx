@@ -2,6 +2,8 @@
 import { ExternalLink } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import brewBeanImg from '../media/coffee.png'
+import enviroImg from '../media/envirorestore.png'
+import simoneImg from '../media/simonemccarthyrealty.png'
 
 const Portfolio = () => {
   const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
@@ -9,40 +11,46 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "E-commerce Platform",
-      category: "Retail",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      description: "Modern shopping experience with seamless checkout"
+      title: "Simone McCarthy Realty",
+      category: "Real Estate",
+      image: simoneImg,
+      description: "Minimalist, mobile-first real estate site with interactive features",
+      link: "https://simonemccarthyrealty.netlify.app/"
     },
     {
-      title: "Healthcare Portal", 
-      category: "Healthcare",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
-      description: "Patient management system with intuitive interface"
+      title: "EnviroRestore", 
+      category: "Environmental Services",
+      image: enviroImg,
+      description: "Crisp, eco-minded restoration site design with a natural touch",
+      link: "https://envirorestore.netlify.app/"
     },
     {
       title: "Brew & Bean",
       category: "Food & Beverage",
       image: brewBeanImg,
-      description: "Artisanal espresso experience with easy online menu"
+      description: "Artisanal espresso experience with easy online menu",
+      link: "https://brewbean.netlify.app/"
     },
     {
       title: "TechStartup",
       category: "Technology",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      description: "Bold design showcasing innovative solutions"
+      description: "Bold design showcasing innovative solutions",
+      link: ""
     },
     {
       title: "Creative Agency",
       category: "Design",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop",
-      description: "Portfolio showcase with dynamic animations"
+      description: "Portfolio showcase with dynamic animations",
+      link: ""
     },
     {
       title: "Financial Services",
       category: "Finance",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
-      description: "Professional platform with secure client portal"
+      description: "Professional platform with secure client portal",
+      link: ""
     }
   ];
 
@@ -68,7 +76,7 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <a 
               key={index}
-              href="https://brewbean.netlify.app/"
+              href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className={`block bg-white rounded-lg overflow-hidden shadow-lg hover-lift hover-glow group scroll-hidden-scale ${
