@@ -4,6 +4,7 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import brewBeanImg from '../media/coffee.png'
 import enviroImg from '../media/envirorestore.png'
 import simoneImg from '../media/simonemccarthyrealty.png'
+import insuranceImg from '../media/insurance.png'
 
 const Portfolio = () => {
   const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
@@ -32,11 +33,11 @@ const Portfolio = () => {
       link: "https://brewbean.netlify.app/"
     },
     {
-      title: "TechStartup",
-      category: "Technology",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      description: "Bold design showcasing innovative solutions",
-      link: ""
+      title: "Ethan Li Insurance",
+      category: "Insurance",
+      image: insuranceImg,
+      description: "Sleek, high-impact insurance site design with responsive flow and a modern edge",
+      link: "https://ethanliinsurance.netlify.app/"
     },
     {
       title: "Creative Agency",
