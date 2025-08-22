@@ -5,6 +5,7 @@ import brewBeanImg from '../media/coffee.png'
 import enviroImg from '../media/envirorestore.png'
 import simoneImg from '../media/simonemccarthyrealty.png'
 import insuranceImg from '../media/insurance.png'
+import mirandaImg from '../media/miinteriors.png'
 
 const Portfolio = () => {
   const { ref: headerRef, isIntersecting: headerVisible } = useIntersectionObserver();
@@ -40,11 +41,11 @@ const Portfolio = () => {
       link: "https://ethanliinsurance.netlify.app/"
     },
     {
-      title: "Creative Agency",
+      title: "Interior Designer",
       category: "Design",
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop",
-      description: "Portfolio showcase with dynamic animations",
-      link: ""
+      image: mirandaImg,
+      description: "Elegant, luxe interior design site with dynamic flow, refined visuals, and a sophisticated modern feel",
+      link: "https://miinteriors.netlify.app/"
     },
     {
       title: "Financial Services",
